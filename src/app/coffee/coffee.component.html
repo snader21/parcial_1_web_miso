@@ -1,0 +1,32 @@
+<div class="container">
+  <p class="title">El aroma mágico</p>
+  <img class="img-fluid" src="../../assets/image 1.png" alt="Imágen de café" />
+  <div class="col-6">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Región</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coffee of coffees">
+          <th>
+            {{ coffee.id }}
+          </th>
+          <td>
+            {{ coffee.nombre }}
+          </td>
+          <td>
+            {{ coffee.tipo }}
+          </td>
+          <td>
+            {{ coffee.region }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
