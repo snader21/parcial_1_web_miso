@@ -14,12 +14,18 @@ export class CoffeeComponent implements OnInit {
 
   constructor(private coffeeService: CoffeeService) {}
 
+  updateCounts() {
+    this.blendNum = 0;
+    this.originNum = 0;
+    this.coffees.forEach((coffee) => {
+      coffee.tipo === 'Blend' ? this.blendNum++ : this.originNum++;
+    });
+  }
+
   getCoffees(): void {
     this.coffeeService.getCoffees().subscribe((coffees) => {
       this.coffees = coffees;
-      this.coffees.forEach((coffee) => {
-        coffee.tipo === 'Blend' ? this.blendNum++ : this.originNum++;
-      });
+      this.updateCounts();
     });
   }
 
