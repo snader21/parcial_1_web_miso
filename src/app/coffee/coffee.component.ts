@@ -9,13 +9,17 @@ import { CoffeeService } from './coffee.service';
 })
 export class CoffeeComponent implements OnInit {
   public coffees: Array<Coffee> = [];
+  public blendNum: number = 0;
+  public originNum: number = 0;
 
   constructor(private coffeeService: CoffeeService) {}
 
   getCoffees(): void {
     this.coffeeService.getCoffees().subscribe((coffees) => {
       this.coffees = coffees;
-      console.log(this.coffees);
+      this.coffees.forEach((coffee) => {
+        coffee.tipo === 'Blend' ? this.blendNum++ : this.originNum++;
+      });
     });
   }
 

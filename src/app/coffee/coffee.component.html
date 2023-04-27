@@ -1,7 +1,15 @@
-<div class="container">
-  <p class="title">El aroma mágico</p>
-  <img class="img-fluid" src="../../assets/image 1.png" alt="Imágen de café" />
-  <div class="col-6">
+<div class="container d-flex flex-column min-vh-100 justify-content-between">
+  <div class="col-12">
+    <p class="title mb-0">El aroma mágico</p>
+    <hr class="mt-1" />
+    <img
+      class="img-fluid"
+      src="../../assets/image 1.png"
+      alt="Imágen de café"
+    />
+    <hr />
+  </div>
+  <div class="col-7">
     <table class="table">
       <thead class="table-dark">
         <tr>
@@ -28,5 +36,18 @@
         </tr>
       </tbody>
     </table>
+    <p class="mb-0">Total café de origen: {{ originNum }}</p>
+    <p class="mt-0">Total café blend: {{ blendNum }}</p>
   </div>
+  <footer class="mt-5">
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <p class="mb-0">
+            Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
